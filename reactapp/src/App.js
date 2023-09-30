@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import '../src/App.css';
+import './App.css';
+
 const App = () => {
   const [tasks, setTasks] = useState([]);
   const [newTask, setNewTask] = useState('');
@@ -13,7 +14,7 @@ const App = () => {
 
   const completeTask = (index) => {
     const updatedTasks = [...tasks];
-    updatedTasks[index].completed = true;
+    updatedTasks[index].completed = !updatedTasks[index].completed; // Toggle completion status
     setTasks(updatedTasks);
   };
 
@@ -51,7 +52,7 @@ const App = () => {
             </button>
           </li>
         ))}
-      </ul>``
+      </ul>
     </div>
   );
 };
