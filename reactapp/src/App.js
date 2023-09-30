@@ -40,7 +40,9 @@ const App = () => {
       <ul>
         {tasks.map((task, index) => (
           <li key={index} className={task.completed ? 'completed' : ''}>
-            {task.text}
+            <span style={{ textDecoration: task.completed ? 'line-through' : 'none' }}>
+              {task.text}
+            </span>
             <button onClick={() => completeTask(index)} data-testid={`complete-button-${index}`}>
               Complete
             </button>
@@ -49,7 +51,7 @@ const App = () => {
             </button>
           </li>
         ))}
-      </ul>
+      </ul>``
     </div>
   );
 };
